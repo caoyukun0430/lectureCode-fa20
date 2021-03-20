@@ -7,6 +7,14 @@ public class IntList {
 		rest = r;
 	}
 
+	/** From Yukun Get() method return the ith item recursion */
+	public int getMe(int i) {
+		if (i == 0) {
+			return first;
+		}
+		return this.rest.getMe(i - 1);
+	}
+
 	/** Return the size of the list using... recursion! */
 	public int size() {
 		if (rest == null) {
@@ -39,6 +47,6 @@ public class IntList {
 		L = new IntList(10, L);
 		L = new IntList(5, L);
 
-		System.out.println(L.get(100));
+		System.out.println(L.get(2));
 	}
 } 
