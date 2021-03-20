@@ -12,6 +12,20 @@ public class Lists1Exercises {
       * the 'new' keyword. */
     public static IntList dincrList(IntList L, int x) {
         /* Your code here. */
+        IntList p = L;
+        // Solution 1 iterative:
+        // while (p != null) {
+        //   System.out.printf("p is %d", p.first);
+        //   p.first = p.first - x;
+        //   System.out.printf("p-x is %d \n", p.first);
+        //   p = p.rest;
+        // }
+
+        // Solution 2 recursive:
+        p.first = p.first - x;
+        if (p.rest != null) {
+          dincrList(p.rest, x);
+        }
         return L;
     }
 
@@ -26,8 +40,12 @@ public class Lists1Exercises {
         // Test your answers by uncommenting. Or copy and paste the
         // code for incrList and dincrList into IntList.java and
         // run it in the visualizer.
-        // System.out.println(L.get(1));
+        System.out.println(L.get(1));
         // System.out.println(incrList(L, 3));
+        IntList Lnew = dincrList(L, 3);
+        for (int i = 0; i < Lnew.size(); i++) {
+          System.out.println(Lnew.get(i));
+        }
         // System.out.println(dincrList(L, 3));        
     }
 }
