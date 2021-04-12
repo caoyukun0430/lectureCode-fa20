@@ -17,7 +17,8 @@ public class Dog {
 		}
 	}
 
-	public static Dog maxDog(Dog d1, Dog d2) {
+//	public static Dog maxDog(Dog d1, Dog d2) {
+	public Dog maxDog(Dog d1, Dog d2) {
 		if (d1.weightInPounds > d2.weightInPounds) {
 			return d1;
 		}

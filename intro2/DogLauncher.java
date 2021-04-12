@@ -4,8 +4,11 @@ public class DogLauncher {
 
 		Dog d2 = new Dog(100);
 
-		//Dog bigger = Dog.maxDog(d, d2);
-		Dog bigger = d.maxDog(d2);
+		// If we instantiate Dog.maxDog, the method needs to be static, otherwise
+		// non-static
+//		Dog bigger = Dog.maxDog(d, d2);
+		// if we call maxDog as instance method from an existing instance d, method is not static
+		Dog bigger = d.maxDog(d, d2);
 		bigger.makeNoise();
 
 		//System.out.println(d.binomen);
