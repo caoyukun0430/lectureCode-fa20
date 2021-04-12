@@ -3,12 +3,18 @@
 public class VengefulSLList<Item> extends SLList<Item> {
     SLList<Item> deletedItems;
 
+    // Constructor for empty input
     public VengefulSLList() {
+        /** Java implicitly calls `super();` if we don't */
         super();
         deletedItems = new SLList<Item>();
     }
 
+    // Constructor for input item x
     public VengefulSLList(Item x) {
+        // here we have to explicitly call super(x);!!!
+        // otherwise it calls super(); and we lost the item x!!
+        super(x);
         deletedItems = new SLList<Item>();
     }
 
